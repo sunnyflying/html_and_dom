@@ -1,16 +1,14 @@
 function getGrade() {
   var total = 0;
-  var corret = ["封装性","继承性","多态性"];
+  var corret = ["封装性", "继承性", "多态性"];
+  var object = ["object1","object2","object3"];
   judgeNull();
 
   var totalSelete = getSelete("selete1", "b") + getSelete("selete2", "c");
 
   var totalDuoSelete = getDuoSelete("duoselete1", "a,b,d") + getDuoSelete("duoselete2", "a,b,c");
 
-  var totalInput = getInput1("UML", "统一建模语言") +
-                   getInput2("object1", corret) +
-                   getInput2("object2", corret) +
-                   getInput2("object3", corret);
+  var totalInput = getInput1("UML", "统一建模语言") + getInput2(object, corret);
 
   var totalText = getText();
 
@@ -85,10 +83,15 @@ function getInput1(input, anwser) {
 
 function getInput2(input, corret) {
   var total = 0;
-  var inputAnwser = document.getElementById(input).value;
-
-  for (var i = 0; i < corret.length; i++) {
-    if (inputAnwser === corret[i]) {
+  var inputAnwsers = [];
+  for (var j = 0; j < input.length; j++) {
+    var inputAnwser = _.contains(inputAnwsers, document.getElementById(input[j]).value);
+    if(!inputAnwser) {
+      inputAnwsers.push(document.getElementById(input[j]).value);
+    }
+  }
+  for (var i = 0; i < inputAnwsers.length; i++) {
+    if(_.contains(corret, inputAnwsers[i])) {
       total += 5;
     }
   }
