@@ -9,11 +9,12 @@ SelectAnwserScore.prototype.constructor = SelectAnwserScore;
 SelectAnwserScore.acountTotalSelect = function() {
   var totalSelect = 0;
 
-  var AllSelectAnwserScore = loadSelectAnwserScore();
+  var AllSelectAnwserScores = loadSelectAnwserScore();
 
-  for (var i = 0; i < AllSelectAnwserScore.length; i++) {
-    var selectAnwserScore = new Questions(AllSelectAnwserScore[i].no, AllSelectAnwserScore[i].anwser, AllSelectAnwserScore[i].score);
+  _.forEach(AllSelectAnwserScores, function(AllSelectAnwserScore) {
+    var selectAnwserScore = new Questions(AllSelectAnwserScore.no, AllSelectAnwserScore.anwser, AllSelectAnwserScore.score);
     totalSelect += selectAnwserScore.acountSelectScore();
-  }
+  });
+
   return totalSelect;
 };
