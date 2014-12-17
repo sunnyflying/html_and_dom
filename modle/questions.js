@@ -6,32 +6,36 @@ function Questions(no, anwser, score) {
 
 Questions.prototype.acountSelectScore = function() {
   var total = 0;
-  var input = document.getElementsByName(this.no);
+  var selects = document.getElementsByName(this.no);
 
-  for (var i = 0; i < input.length; i++) {
-    if (input[i].checked === true && input[i].value === this.anwser) {
+  _.forEach(selects, function(select) {
+    if (select.checked === true && select.value === this.anwser) {
       total = this.score;
     }
-  }
+  });
+
   return total;
 };
 
 Questions.prototype.acountInputScore = function() {
   var total = 0;
   var inputAnwsers = [];
-  var no = this.no;
-  for (var j = 0; j < no.length; j++) {
-    var inputAnwser = _.contains(inputAnwsers, document.getElementById(no[j]).value);
+  var nos = this.no;
+
+  _.forEach(nos, function(no) {
+    var inputAnwser = _.contains(inputAnwsers, document.getElementById(no).value);
     if(!inputAnwser) {
-      inputAnwsers.push(document.getElementById(no[j]).value);
+      inputAnwsers.push(document.getElementById(no).value);
     }
-  }
-  for (var i = 0; i < inputAnwsers.length; i++) {
-    if(inputAnwsers[i] !== '') {
-      if(_.contains(this.anwser, inputAnwsers[i]) || inputAnwsers[i] === this.anwser) {
+  });
+
+  _.forEach(inputAnwsers, function(inputAnwser) {
+    if(inputAnwser !== '') {
+      if(_.contains(this.anwser, inputAnwser) || inputAnwser === this.anwser) {
         total += this.score;
       }
     }
-  }
+  });
+
   return total;
 };

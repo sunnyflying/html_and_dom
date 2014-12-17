@@ -8,12 +8,12 @@ JudgeAnwserScore.prototype.constructor = JudgeAnwserScore;
 
 JudgeAnwserScore.acountTotalJudge = function() {
   var totalJudge = 0;
+  var AllJudgeAnwserScores = loadJudgeAnwserScore();
 
-  var AllJudgeAnwserScore = loadJudgeAnwserScore();
-
-  for (var i = 0; i < AllJudgeAnwserScore.length; i++) {
-    var judgeAnwserScore = new Questions(AllJudgeAnwserScore[i].no, AllJudgeAnwserScore[i].anwser, AllJudgeAnwserScore[i].score);
+  _.forEach(AllJudgeAnwserScores, function(AllJudgeAnwserScore) {
+    var judgeAnwserScore = new Questions(AllJudgeAnwserScore.no, AllJudgeAnwserScore.anwser, AllJudgeAnwserScore.score);
     totalJudge += judgeAnwserScore.acountSelectScore();
-  }
+  });
+
   return totalJudge;
 };
