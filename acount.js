@@ -1,7 +1,7 @@
 function acount() {
   var total = 0;
   var questions = new Questions();
-
+  judgeNull();
   var totalSelect = SelectAnwserScore.acountTotalSelect();
   var totalMoreSelete = MoreSelectAnwserScore.acountTotalMoreSelect();
   var totalJudge = JudgeAnwserScore.acountTotalJudge();
@@ -12,5 +12,18 @@ function acount() {
 
   document.getElementById("print").innerHTML = total;
 
-  // return false;
+  return false;
+}
+
+function judgeNull() {
+  var personInfos = ["name","id","class"];
+  var information = ["姓名","学号","班级"];
+
+  for (var i = 0; i < personInfos.length; i++) {
+    var personInfo = document.getElementById(personInfos[i]).value;
+
+    if (personInfo === "") {
+      alert("请输入:" + information[i] + "!");
+    }
+  }
 }
