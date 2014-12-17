@@ -11,11 +11,11 @@ MoreSelectAnwserScore.prototype.acountSelectScore = function() {
   var total = 0;
   var moreSeleteAnwsers = document.getElementsByName(this.no);
 
-  for (var i = 0; i < moreSeleteAnwsers.length; i++) {
-    if (moreSeleteAnwsers[i].checked === true) {
-      array.push(moreSeleteAnwsers[i].value);
+  _.forEach(moreSeleteAnwsers, function(moreSeleteAnwser) {
+    if (moreSeleteAnwser.checked === true) {
+      array.push(moreSeleteAnwser.value);
     }
-  }
+  });
 
   if (array.toString() === this.anwser) {
     total = this.score;
@@ -26,12 +26,11 @@ MoreSelectAnwserScore.prototype.acountSelectScore = function() {
 
 MoreSelectAnwserScore.acountTotalMoreSelect = function() {
   var totalMoreSelect = 0;
-
-  var AllMoreSelectAnwserScore = loadMoreSelectAnwserScore();
-
-  for (var i = 0; i < AllMoreSelectAnwserScore.length; i++) {
-    var moreSelectAnwserScore = new MoreSelectAnwserScore(AllMoreSelectAnwserScore[i].no, AllMoreSelectAnwserScore[i].anwser, AllMoreSelectAnwserScore[i].score);
+  var AllMoreSelectAnwserScores = loadMoreSelectAnwserScore();
+  _.forEach(AllMoreSelectAnwserScores, function(AllMoreSelectAnwserScore) {
+    var moreSelectAnwserScore = new MoreSelectAnwserScore(AllMoreSelectAnwserScore.no, AllMoreSelectAnwserScore.anwser, AllMoreSelectAnwserScore.score);
     totalMoreSelect += moreSelectAnwserScore.acountSelectScore();
-  }
+  });
+
   return totalMoreSelect;
 };

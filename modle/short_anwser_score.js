@@ -8,12 +8,12 @@ ShortAnwserScore.prototype.constructor = ShortAnwserScore;
 
 ShortAnwserScore.acountTotalShort = function() {
   var totalShort = 0;
+  var AllShortAnwserScores = loadShortAnwserScore();
 
-  var AllShortAnwserScore = loadShortAnwserScore();
-
-  for (var i = 0; i < AllShortAnwserScore.length; i++) {
-    var shortAnwserScore = new Questions(AllShortAnwserScore[i].no, AllShortAnwserScore[i].anwser, AllShortAnwserScore[i].score);
+  _.forEach(AllShortAnwserScores, function(AllShortAnwserScore) {
+    var shortAnwserScore = new Questions(AllShortAnwserScore.no, AllShortAnwserScore.anwser, AllShortAnwserScore.score);
     totalShort += shortAnwserScore.acountInputScore();
-  }
+  });
+
   return totalShort;
 };
