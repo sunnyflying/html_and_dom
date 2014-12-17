@@ -1,6 +1,5 @@
 function acount() {
   var total = 0;
-  var questions = new Questions();
   judgeNull();
   var totalSelect = SelectAnwserScore.acountTotalSelect();
   var totalMoreSelete = MoreSelectAnwserScore.acountTotalMoreSelect();

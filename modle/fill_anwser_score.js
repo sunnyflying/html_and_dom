@@ -9,11 +9,12 @@ FillAnwserScore.prototype.constructor = FillAnwserScore;
 FillAnwserScore.acountTotalFill = function() {
   var totalFill = 0;
 
-  var AllFillAnwserScore = loadFillAnwserScore();
+  var AllFillAnwserScores = loadFillAnwserScore();
 
-  for (var i = 0; i < AllFillAnwserScore.length; i++) {
-    var fillAnwserScore = new FillAnwserScore(AllFillAnwserScore[i].no, AllFillAnwserScore[i].anwser, AllFillAnwserScore[i].score);
+  _.forEach(AllFillAnwserScores, function(AllFillAnwserScore) {
+    var fillAnwserScore = new Questions(AllFillAnwserScore.no, AllFillAnwserScore.anwser, AllFillAnwserScore.score);
     totalFill += fillAnwserScore.acountInputScore();
-  }
+  });
+
   return totalFill;
 };

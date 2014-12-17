@@ -12,7 +12,7 @@ JudgeAnwserScore.acountTotalJudge = function() {
   var AllJudgeAnwserScore = loadJudgeAnwserScore();
 
   for (var i = 0; i < AllJudgeAnwserScore.length; i++) {
-    var judgeAnwserScore = new JudgeAnwserScore(AllJudgeAnwserScore[i].no, AllJudgeAnwserScore[i].anwser, AllJudgeAnwserScore[i].score);
+    var judgeAnwserScore = new Questions(AllJudgeAnwserScore[i].no, AllJudgeAnwserScore[i].anwser, AllJudgeAnwserScore[i].score);
     totalJudge += judgeAnwserScore.acountSelectScore();
   }
   return totalJudge;

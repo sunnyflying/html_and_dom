@@ -12,7 +12,7 @@ ShortAnwserScore.acountTotalShort = function() {
   var AllShortAnwserScore = loadShortAnwserScore();
 
   for (var i = 0; i < AllShortAnwserScore.length; i++) {
-    var shortAnwserScore = new ShortAnwserScore(AllShortAnwserScore[i].no, AllShortAnwserScore[i].anwser, AllShortAnwserScore[i].score);
+    var shortAnwserScore = new Questions(AllShortAnwserScore[i].no, AllShortAnwserScore[i].anwser, AllShortAnwserScore[i].score);
     totalShort += shortAnwserScore.acountInputScore();
   }
   return totalShort;
