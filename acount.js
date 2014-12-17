@@ -6,15 +6,10 @@ function acount() {
   var totalMoreSelete = MoreSelectAnwserScore.acountTotalMoreSelect();
   var totalJudge = JudgeAnwserScore.acountTotalJudge();
   var totalFill = FillAnwserScore.acountTotalFill();
+  var totalShort = ShortAnwserScore.acountTotalShort();
 
+  total = totalSelect + totalMoreSelete + totalJudge + totalFill + totalShort;
 
-  //
-  // var totalShort = ShortAnwserScore.acountShortScore();
-  //
-
-  //
-  total = totalSelect + totalMoreSelete + totalJudge + totalFill;
-  //
   document.getElementById("print").innerHTML = total;
 
   // return false;
