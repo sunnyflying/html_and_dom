@@ -1,6 +1,6 @@
 function loadFillAnwserScore() {
   return [
-  new FillAnwserScore("UML","统一建模语言", 15),
+  new FillAnwserScore(["UML"],"统一建模语言", 15),
   new FillAnwserScore(["object1","object2","object3"], [
     "封装性",
     "继承性",

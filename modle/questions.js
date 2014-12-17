@@ -27,8 +27,10 @@ Questions.prototype.acountInputScore = function() {
     }
   }
   for (var i = 0; i < inputAnwsers.length; i++) {
-    if(_.contains(corret, inputAnwsers[i])) {
-      total += 5;
+    if(inputAnwsers[i] !== '') {
+      if(_.contains(this.anwser, inputAnwsers[i]) || inputAnwsers[i] === this.anwser) {
+        total += this.score;
+      }
     }
   }
   return total;
