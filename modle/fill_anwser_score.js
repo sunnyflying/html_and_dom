@@ -1,21 +1,19 @@
-function FillAnwserScore() {
-  this.anwser = anwser;
+function FillAnwserScore(no, anwser, score) {
+  Questions.call(this, no, anwser);
   this.score = score;
 }
 
-FillAnwserScore.prototype.acountFillScore = function(inputFill){
-  var total = 0;
-  var inputAnwsers = [];
-  for (var j = 0; j < inputFill.length; j++) {
-    var inputAnwser = _.contains(inputAnwsers, document.getElementById(inputFill[j]).value);
-    if(!inputAnwser) {
-      inputAnwsers.push(document.getElementById(inputFill[j]).value);
-    }
+FillAnwserScore.prototype = Object.create(Questions.prototype);
+FillAnwserScore.prototype.constructor = FillAnwserScore;
+
+FillAnwserScore.acountTotalFill = function() {
+  var totalFill = 0;
+
+  var AllFillAnwserScore = loadFillAnwserScore();
+
+  for (var i = 0; i < AllFillAnwserScore.length; i++) {
+    var fillAnwserScore = new FillAnwserScore(AllFillAnwserScore[i].no, AllFillAnwserScore[i].anwser, AllFillAnwserScore[i].score);
+    totalFill += fillAnwserScore.acountInputScore();
   }
-  for (var i = 0; i < inputAnwsers.length; i++) {
-    if(_.contains(corret, inputAnwsers[i])) {
-      total += this.score;
-    }
-  }
-  return total;
+  return totalFill;
 };

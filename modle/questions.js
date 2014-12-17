@@ -19,17 +19,16 @@ Questions.prototype.acountSelectScore = function() {
 Questions.prototype.acountInputScore = function() {
   var total = 0;
   var inputAnwsers = [];
-  var input = document.getElementById(this.no);
-
-  for (var j = 0; j < input.length; j++) {
-    var inputAnwser = _.contains(inputAnwsers, input.value);
+  var no = this.no;
+  for (var j = 0; j < no.length; j++) {
+    var inputAnwser = _.contains(inputAnwsers, document.getElementById(no[j]).value);
     if(!inputAnwser) {
-      inputAnwsers.push(input.value);
+      inputAnwsers.push(document.getElementById(no[j]).value);
     }
   }
   for (var i = 0; i < inputAnwsers.length; i++) {
-    if(_.contains(this.anwser, inputAnwsers[i])) {
-      total += this.score;
+    if(_.contains(corret, inputAnwsers[i])) {
+      total += 5;
     }
   }
   return total;
