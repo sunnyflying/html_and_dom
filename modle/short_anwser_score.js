@@ -11,7 +11,7 @@ ShortAnwserScore.acountTotalShort = function() {
 
   var AllShortAnwserScore = loadShortAnwserScore();
 
-  for (var i = 0; i < AllFillAnwserScore.length; i++) {
+  for (var i = 0; i < AllShortAnwserScore.length; i++) {
     var shortAnwserScore = new ShortAnwserScore(AllShortAnwserScore[i].no, AllShortAnwserScore[i].anwser, AllShortAnwserScore[i].score);
     totalShort += shortAnwserScore.acountInputScore();
   }
