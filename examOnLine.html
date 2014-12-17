@@ -3,8 +3,14 @@
 <head>
   <title>yangmingkun</title>
   <meta charset="UTF-8">
-  <script type="text/javascript" src="examOnLine.js" ></script>
   <script type="text/javascript" src="lib/lodash-2.4.1/lodash.compat.js"></script>
+  <script type="text/javascript" src="StandardAnwser/fixtures.js"></script>
+  <script type="text/javascript" src="modle/questions.js"></script>
+  <script type="text/javascript" src="modle/select_anwser_score.js"></script>
+  <script type="text/javascript" src="modle/judge_anwser_score.js"></script>
+  <script type="text/javascript" src="modle/moreSelect_anwser_score.js"></script>
+  <script type="text/javascript" src="acount.js"></script>
+
 </head>
 
 <body>
@@ -43,26 +49,24 @@
           <li>
             UML 与软件工程的关系是:
             <br />
-            <input type="radio" name="selete1" value="a" />UML 就是软件工程
+            <input type="radio" name="selete1" value="a" />A. UML 就是软件工程
             <br />
-            <input type="radio" name="selete1" value="b" />UML 参与到软件工程中软件开发过程的几个阶段
+            <input type="radio" name="selete1" value="b" />B. UML 参与到软件工程中软件开发过程的几个阶段
             <br />
-            <input type="radio" name="selete1" value="c" />UML 与软件工程无关
+            <input type="radio" name="selete1" value="c" />C. UML 与软件工程无关
             <br />
-            <input type="radio" name="selete1" value="d" />UML 是软件工程的一部分
-            <br />
+            <input type="radio" name="selete1" value="d" />D. UML 是软件工程的一部分
           </li>
-          <br/>
           <li>
             Java 语言支持:
             <br />
-            <input type="radio" name="selete2" value="a" />单继承
+            <input type="radio" name="selete2" value="a" />A. 单继承
             <br />
-            <input type="radio" name="selete2" value="b" />多继承
+            <input type="radio" name="selete2" value="b" />B. 多继承
             <br />
-            <input type="radio" name="selete2" value="c" />单继承和多继承都支持
+            <input type="radio" name="selete2" value="c" />C. 单继承和多继承都支持
             <br />
-            <input type="radio" name="selete2" value="d" />单继承和多继承都不支持
+            <input type="radio" name="selete2" value="d" />D. 单继承和多继承都不支持
             <br />
           </li>
         </ol>
@@ -74,26 +78,26 @@
           <li>
             用例的粒度分为以下哪三种:
             <br />
-            <input type="checkbox" name="duoselete1" value="a" />概述级、
+            <input type="checkbox" name="duoselete1" value="a"/>A. 概述级、
             <br />
-            <input type="checkbox" name="duoselete1" value="b"/>需求级
+            <input type="checkbox" name="duoselete1" value="b"/>B. 需求级
             <br />
-            <input type="checkbox" name="duoselete1" value="c"/>用户目标级、
+            <input type="checkbox" name="duoselete1" value="c"/>C. 用户目标级、
             <br />
-            <input type="checkbox" name="duoselete1" value="d"/>子功能级
+            <input type="checkbox" name="duoselete1" value="d"/>D. 子功能级
             <br />
           </li>
           <br/>
           <li>
             类图由以下哪三部分组成:
             <br />
-            <input type="checkbox" name="duoselete2" value="a"/>名称(Name)
+            <input type="checkbox" name="duoselete2" value="a"/>A. 名称(Name)
             <br />
-            <input type="checkbox" name="duoselete2" value="b"/>属性(Attribute)
+            <input type="checkbox" name="duoselete2" value="b"/>B. 属性(Attribute)
             <br />
-            <input type="checkbox" name="duoselete2" value="c"/>操作(Operation)
+            <input type="checkbox" name="duoselete2" value="c"/>C. 操作(Operation)
             <br />
-            <input type="checkbox" name="duoselete2" value="d"/>方法(Function)
+            <input type="checkbox" name="duoselete2" value="d"/>D. 方法(Function)
             <br />
           </li>
         </ol>
@@ -127,11 +131,11 @@
         <li>
           简述什么是模型以及模型的表现形式?
           <br />
-          <textarea id="ask" cols="50" rows="5" />
+          <textarea id="ask" cols="50" rows="5" /></textarea>
         </li>
       </ol>
       </section>
-      <input type="submit" value="计算分值" onclick="return getGrade()">
     </form>
+    <input type="button" value="计算分值" onclick="acount()" />
   </body>
 </html>
