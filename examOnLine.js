@@ -16,6 +16,7 @@ function getGrade() {
 
   total = totalSelete + totalDuoSelete + totalInput + totalText + totalJudge;
   document.getElementById("print").innerHTML=total;
+  return false;
 }
 
 function judgeNull() {
@@ -55,11 +56,13 @@ function getSelete(selete, anwser) {
 function getDuoSelete(duoSelete, anwser) {
   var array = [];
   var total = 0;
-  var duoSeleteAnwser = document.getElementsByName(duoSelete);
+  var duoSeleteAnwsers = document.getElementsByName(duoSelete);
 
-  for (var i = 0; i < duoSeleteAnwser.length; i++) {
-    if (duoSeleteAnwser[i].checked === true) {
-      array.push(duoSeleteAnwser[i].value);
+
+
+  for (var i = 0; i < duoSeleteAnwsers.length; i++) {
+    if (duoSeleteAnwsers[i].checked === true) {
+      array.push(duoSeleteAnwsers[i].value);
     }
   }
 

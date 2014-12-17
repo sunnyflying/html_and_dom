@@ -1,93 +1,137 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>yangmingkun</title>
-<meta charset="UTF-8">
-<script type="text/javascript" src="examOnLine.js" >
-</script>
-<script type="text/javascript" src="lib/lodash-2.4.1/lodash.compat.js">
-</script>
+  <title>yangmingkun</title>
+  <meta charset="UTF-8">
+  <script type="text/javascript" src="examOnLine.js" ></script>
+  <script type="text/javascript" src="lib/lodash-2.4.1/lodash.compat.js"></script>
 </head>
+
 <body>
-<p style="font-size:25px;text-align:center"><b>统一建模语言理论测试</b></p>
-<hr>
-<p>
-  考试科目：<b><u>统一建模语言___</u><b>
-  时间：<b><u>100分钟__</u><b>
-  分数：<b id="print" > </b>
-</p>
+    <form>
+    <h1>统一建模语言理论测试</h1>
 
-  班级：<input type="text" id="class" size="15px"/>
-  学号:<input type="text" id="id" size="15px"/>
-  姓名：<input type="text" id="name" size="15px"/>
-<p><b>一  填空题</b></p>
-1.UML的中文全称是：<input type="text" id="UML" size="15px"/>
-<p>2.对象最突出的特征是：<input type="text" id="object1" size="13px"/>
-   <input type="text" id="object2" size="13px"/>
-   <input type="text" id="object3" size="13px"/></p>
-<p><b>二 选择题</b></p>
-1.UML 与软件工程的关系是:
-<br />
-<input type="radio" name="selete1" value="a" />UML 就是软件工程
-<br />
-<input type="radio" name="selete1" value="b" />UML 参与到软件工程中软件开发过程的几个阶段
-<br />
-<input type="radio" name="selete1" value="c" />UML 与软件工程无关
-<br />
-<input type="radio" name="selete1" value="d" />UML 是软件工程的一部分
-<br />
-<br />
-2.Java 语言支持:
-<br />
-<input type="radio" name="selete2" value="a" />单继承
-<br />
-<input type="radio" name="selete2" value="b" />多继承
-<br />
-<input type="radio" name="selete2" value="c" />单继承和多继承都支持
-<br />
-<input type="radio" name="selete2" value="d" />单继承和多继承都不支持
-<br />
-<br />
-<b>三 多选题</b>
-<br />
-1. 用例的粒度分为以下哪三种:<br />
-<input type="checkbox" name="duoselete1" value="a" />概述级、
-<br />
-<input type="checkbox" name="duoselete1" value="b"/>需求级
-<br />
-<input type="checkbox" name="duoselete1" value="c"/>用户目标级、
-<br />
-<input type="checkbox" name="duoselete1" value="d"/>子功能级
-<br />
-<br />
-2. 类图由以下哪三部分组成:<br />
-<input type="checkbox" name="duoselete2" value="a"/>名称(Name)
-<br />
-<input type="checkbox" name="duoselete2" value="b"/>属性(Attribute)
-<br />
-<input type="checkbox" name="duoselete2" value="c"/>操作(Operation)
-<br />
-<input type="checkbox" name="duoselete2" value="d"/>方法(Function)
-<br />
-<b>四 判断题</b><br />
-1. 用例图只是用于和客户交流和沟通的,用于确定需求
-<br />
-<input type="radio" name="judge1" value="true" /> true
-<br />
-<input type="radio" name="judge1" value="false" /> false
-<br />
-2. 在状态图中,终止状态在一个状态图中允许有任意多个
-<br />
-<input type="radio" name="judge2" value="true" /> true
-<br />
-<input type="radio" name="judge2" value="false" /> false
-<br /><br />
-<b>五 简答题</b><br/>
-1. 简述什么是模型以及模型的表现形式?<br />
-<input type="text" id="ask" height=“50px” width=""/>
-<br />
-<br/>
-<input type="button" value="计算分值" onclick="getGrade()">
+    <p>
+      考试科目：<b>统一建模语言<b>&nbsp;&nbsp;&nbsp;
+      时   间：<b><u>100分钟__</u><b>&nbsp;&nbsp;&nbsp;
+      分   数：<b id="print" > </b>
+    </p>
 
-</body>
+    班级：<input type="text" id="class" size="15px"/>
+    学号:<input type="text" id="id" size="15px"/>
+    姓名：<input type="text" id="name" size="15px"/>
+      <section>
+        <h3><b>一  填空题</b></h3>
+        <ol>
+          <li>
+            UML的中文全称是：
+            <input type="text" id="UML"/>.
+          </li>
+          <br/>
+          <li>
+            对象最突出的特征是：
+            <input type="text" id="object1" size="11px"/>,
+            <input type="text" id="object2" size="11px"/>,
+            <input type="text" id="object3" size="11px"/>.
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>二 选择题</h3>
+        <ol>
+          <li>
+            UML 与软件工程的关系是:
+            <br />
+            <input type="radio" name="selete1" value="a" />UML 就是软件工程
+            <br />
+            <input type="radio" name="selete1" value="b" />UML 参与到软件工程中软件开发过程的几个阶段
+            <br />
+            <input type="radio" name="selete1" value="c" />UML 与软件工程无关
+            <br />
+            <input type="radio" name="selete1" value="d" />UML 是软件工程的一部分
+            <br />
+          </li>
+          <br/>
+          <li>
+            Java 语言支持:
+            <br />
+            <input type="radio" name="selete2" value="a" />单继承
+            <br />
+            <input type="radio" name="selete2" value="b" />多继承
+            <br />
+            <input type="radio" name="selete2" value="c" />单继承和多继承都支持
+            <br />
+            <input type="radio" name="selete2" value="d" />单继承和多继承都不支持
+            <br />
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>三 多选题</h3>
+        <ol>
+          <li>
+            用例的粒度分为以下哪三种:
+            <br />
+            <input type="checkbox" name="duoselete1" value="a" />概述级、
+            <br />
+            <input type="checkbox" name="duoselete1" value="b"/>需求级
+            <br />
+            <input type="checkbox" name="duoselete1" value="c"/>用户目标级、
+            <br />
+            <input type="checkbox" name="duoselete1" value="d"/>子功能级
+            <br />
+          </li>
+          <br/>
+          <li>
+            类图由以下哪三部分组成:
+            <br />
+            <input type="checkbox" name="duoselete2" value="a"/>名称(Name)
+            <br />
+            <input type="checkbox" name="duoselete2" value="b"/>属性(Attribute)
+            <br />
+            <input type="checkbox" name="duoselete2" value="c"/>操作(Operation)
+            <br />
+            <input type="checkbox" name="duoselete2" value="d"/>方法(Function)
+            <br />
+          </li>
+        </ol>
+      </section>
+
+      <section>
+        <h3><b>四 判断题</b></h3>
+        <ol>
+          <li>
+            用例图只是用于和客户交流和沟通的,用于确定需求
+            <br />
+            <input type="radio" name="judge1" value="true" /> true
+            <br />
+            <input type="radio" name="judge1" value="false" /> false
+            <br />
+          </li>
+          <br/>
+          <li>
+            在状态图中,终止状态在一个状态图中允许有任意多个
+            <br />
+            <input type="radio" name="judge2" value="true" /> true
+            <br />
+            <input type="radio" name="judge2" value="false" /> false
+          </li>
+        </ol>
+      </section>
+
+      <section>
+      <h3><b>五 简答题</b></h3>
+      <ol>
+        <li>
+          简述什么是模型以及模型的表现形式?
+          <br />
+          <textarea id="ask" cols="50" rows="5" />
+        </li>
+      </ol>
+      </section>
+      <input type="submit" value="计算分值" onclick="return getGrade()">
+    </form>
+  </body>
 </html>
