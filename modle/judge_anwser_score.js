@@ -1,19 +1,13 @@
-function JudgeAnwserScore(no, anwser, score) {
-  Questions.call(this, no, anwser);
-  this.score = score;
+function judgeAnwserScore(name, standardAnswer, scorce) {
+  Question.call(this, name, standardAnswer, scorce);
 }
 
-JudgeAnwserScore.prototype = Object.create(Questions.prototype);
-JudgeAnwserScore.prototype.constructor = JudgeAnwserScore;
+judgeAnwserScore.prototype = Object.create(Question.prototype);
+judgeAnwserScore.prototype.constructor = judgeAnwserScore;
 
-JudgeAnwserScore.acountTotalJudge = function() {
-  var totalJudge = 0;
-  var AllJudgeAnwserScores = loadJudgeAnwserScore();
+judgeAnwserScore.prototype.calculate = function (inputAnwser) {
+  var radio = _.find(inputAnwser, { checked: true });
+  var radioValue = radio ? radio.value : '';
 
-  _.forEach(AllJudgeAnwserScores, function(AllJudgeAnwserScore) {
-    var judgeAnwserScore = new JudgeAnwserScore(AllJudgeAnwserScore.no, AllJudgeAnwserScore.anwser, AllJudgeAnwserScore.score);
-    totalJudge += judgeAnwserScore.acountSelectScore();
-  });
-
-  return totalJudge;
+  return this.standardAnswer === radioValue ? this.scorce : 0;
 };

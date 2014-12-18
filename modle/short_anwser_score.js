@@ -1,19 +1,14 @@
-function ShortAnwserScore(no, anwser, score) {
-  Questions.call(this, no, anwser);
-  this.score = score;
+function ShortAnswerScore(name, standardAnswer, scorce) {
+  Question.call(this, name, standardAnswer, scorce);
 }
 
-ShortAnwserScore.prototype = Object.create(Questions.prototype);
-ShortAnwserScore.prototype.constructor = ShortAnwserScore;
+ShortAnswerScore.prototype = Object.create(Question.prototype);
+ShortAnswerScore.prototype.constructor = ShortAnswerScore;
 
-ShortAnwserScore.acountTotalShort = function() {
-  var totalShort = 0;
-  var AllShortAnwserScores = loadShortAnwserScore();
-
-  _.forEach(AllShortAnwserScores, function(AllShortAnwserScore) {
-    var shortAnwserScore = new ShortAnwserScore(AllShortAnwserScore.no, AllShortAnwserScore.anwser, AllShortAnwserScore.score);
-    totalShort += shortAnwserScore.acountInputScore();
-  });
-
-  return totalShort;
+ShortAnswerScore.prototype.calculate = function (inputAnwser) {
+  var string;
+  for (var i = 0; i < inputAnwser.length; i++) {
+    string = inputAnwser[i].value;
+  }
+  return this.standardAnswer === string ? this.scorce : 0;
 };

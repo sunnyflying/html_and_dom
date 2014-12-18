@@ -4,6 +4,10 @@ function Question(name, standardAnswer, scorce){
   this.scorce = scorce;
 }
 
-Question.prototype.countScorce = function () {
+Question.all = function() {
+  return loadStandardAnwserAndScore();
+};
+
+Question.prototype.calculate = function () {
 
 };
