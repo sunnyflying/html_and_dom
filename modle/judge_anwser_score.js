@@ -11,7 +11,7 @@ JudgeAnwserScore.acountTotalJudge = function() {
   var AllJudgeAnwserScores = loadJudgeAnwserScore();
 
   _.forEach(AllJudgeAnwserScores, function(AllJudgeAnwserScore) {
-    var judgeAnwserScore = new Questions(AllJudgeAnwserScore.no, AllJudgeAnwserScore.anwser, AllJudgeAnwserScore.score);
+    var judgeAnwserScore = new JudgeAnwserScore(AllJudgeAnwserScore.no, AllJudgeAnwserScore.anwser, AllJudgeAnwserScore.score);
     totalJudge += judgeAnwserScore.acountSelectScore();
   });
 

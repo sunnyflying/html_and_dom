@@ -1,22 +1,24 @@
-function acount() {
-  var total = 0;
-  judgeNull();
-  var totalSelect = SelectAnwserScore.acountTotalSelect();
-  var totalMoreSelete = MoreSelectAnwserScore.acountTotalMoreSelect();
-  var totalJudge = JudgeAnwserScore.acountTotalJudge();
-  var totalFill = FillAnwserScore.acountTotalFill();
-  var totalShort = ShortAnwserScore.acountTotalShort();
+function countGarde() {
+  var scorce = 0;
+  var questions = Question.all();
 
-  total = totalSelect + totalMoreSelete + totalJudge + totalFill + totalShort;
+  if (hasEmptyRequiredInput()) {
+    return false;
+  }
 
-  document.getElementById("print").innerHTML = total;
+  _.forEach(questions, function(question){
+    var anwser = document.getElementsByName(question.name);
+    scorce += question.countScorce(anwser);
+  });
+
+  document.getElementById('acount').value = scorce;
 
   return false;
 }
 
-function judgeNull() {
-  var personInfos = ["name","id","class"];
-  var information = ["姓名","学号","班级"];
+function hasEmptyRequiredInput() {
+  var personInfos = ["class","id","name"];
+  var information = ["班级","学号","姓名"];
 
   for (var i = 0; i < personInfos.length; i++) {
     var personInfo = document.getElementById(personInfos[i]).value;

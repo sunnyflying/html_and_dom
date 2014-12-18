@@ -12,7 +12,7 @@ SelectAnwserScore.acountTotalSelect = function() {
   var AllSelectAnwserScores = loadSelectAnwserScore();
 
   _.forEach(AllSelectAnwserScores, function(AllSelectAnwserScore) {
-    var selectAnwserScore = new Questions(AllSelectAnwserScore.no, AllSelectAnwserScore.anwser, AllSelectAnwserScore.score);
+    var selectAnwserScore = new SelectAnwserScore(AllSelectAnwserScore.no, AllSelectAnwserScore.anwser, AllSelectAnwserScore.score);
     totalSelect += selectAnwserScore.acountSelectScore();
   });
 

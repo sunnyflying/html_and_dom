@@ -12,7 +12,7 @@ FillAnwserScore.acountTotalFill = function() {
   var AllFillAnwserScores = loadFillAnwserScore();
 
   _.forEach(AllFillAnwserScores, function(AllFillAnwserScore) {
-    var fillAnwserScore = new Questions(AllFillAnwserScore.no, AllFillAnwserScore.anwser, AllFillAnwserScore.score);
+    var fillAnwserScore = new FillAnwserScore(AllFillAnwserScore.no, AllFillAnwserScore.anwser, AllFillAnwserScore.score);
     totalFill += fillAnwserScore.acountInputScore();
   });
 
