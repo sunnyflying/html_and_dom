@@ -1,21 +1,21 @@
-function fillAnwserScore(name, standardAnswer, scorce) {
-  Question.call(this, name, standardAnswer, scorce);
+function FillAnwserScore(name, standardAnswer, score) {
+  Question.call(this, name, standardAnswer, score);
 }
 
-fillAnwserScore.prototype = Object.create(Question.prototype);
-fillAnwserScore.prototype.constructor = fillAnwserScore;
+FillAnwserScore.prototype = Object.create(Question.prototype);
+FillAnwserScore.prototype.constructor = FillAnwserScore;
 
-fillAnwserScore.prototype.calculate = function (inputAnwser) {
-  var scorce = 0;
+FillAnwserScore.prototype.calculate = function (inputAnwser) {
+  var score = 0;
   var answers = [];
   for (var i = 0; i < inputAnwser.length; i++) {
     answers.push(inputAnwser[i].value);
   }
   _this = this;
-  _.forEach(this.standardAnswer, function(array) {
+  _.forEach(_this.standardAnswer, function(array) {
     if(_.contains(answers, array)) {
-      scorce += _this.scorce;
+      score += _this.score;
     }
   });
-  return scorce;
+  return score;
 };

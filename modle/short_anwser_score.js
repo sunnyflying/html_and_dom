@@ -1,5 +1,5 @@
-function ShortAnswerScore(name, standardAnswer, scorce) {
-  Question.call(this, name, standardAnswer, scorce);
+function ShortAnswerScore(name, standardAnswer, score) {
+  Question.call(this, name, standardAnswer, score);
 }
 
 ShortAnswerScore.prototype = Object.create(Question.prototype);
@@ -10,5 +10,5 @@ ShortAnswerScore.prototype.calculate = function (inputAnwser) {
   for (var i = 0; i < inputAnwser.length; i++) {
     string = inputAnwser[i].value;
   }
-  return this.standardAnswer === string ? this.scorce : 0;
+  return this.standardAnswer === string ? this.score : 0;
 };

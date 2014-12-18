@@ -1,5 +1,5 @@
 function getAcount() {
-  var scorce = 0;
+  var score = 0;
   var questions = Question.all();
 
   if (hasEmptyRequiredInput()) {
@@ -8,16 +8,16 @@ function getAcount() {
 
   _.forEach(questions, function(question){
     var inputAnwser = document.getElementsByName(question.name);
-    scorce += question.calculate(inputAnwser);
+    score += question.calculate(inputAnwser);
   });
 
-  document.getElementById('acount').value = scorce;
+  document.getElementById("score").innerText = score;
 
-  return false;
+  // return false;
 }
 
 function hasEmptyRequiredInput() {
-  var personInfos = ["class","id","name"];
+  var personInfos = ["className","studentNumber","studentName"];
   var information = ["班级","学号","姓名"];
 
   for (var i = 0; i < personInfos.length; i++) {

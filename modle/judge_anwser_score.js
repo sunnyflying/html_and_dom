@@ -1,13 +1,13 @@
-function judgeAnwserScore(name, standardAnswer, scorce) {
-  Question.call(this, name, standardAnswer, scorce);
+function JudgeAnwserScore(name, standardAnswer, score) {
+  Question.call(this, name, standardAnswer, score);
 }
 
-judgeAnwserScore.prototype = Object.create(Question.prototype);
-judgeAnwserScore.prototype.constructor = judgeAnwserScore;
+JudgeAnwserScore.prototype = Object.create(Question.prototype);
+JudgeAnwserScore.prototype.constructor = JudgeAnwserScore;
 
-judgeAnwserScore.prototype.calculate = function (inputAnwser) {
+JudgeAnwserScore.prototype.calculate = function (inputAnwser) {
   var radio = _.find(inputAnwser, { checked: true });
   var radioValue = radio ? radio.value : '';
 
-  return this.standardAnswer === radioValue ? this.scorce : 0;
+  return this.standardAnswer === radioValue ? this.score : 0;
 };

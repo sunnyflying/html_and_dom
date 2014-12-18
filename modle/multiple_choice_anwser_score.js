@@ -1,11 +1,11 @@
-function MultipleChoice(name, standardAnswer, scorce) {
-  Question.call(this, name, standardAnswer, scorce);
+function MultipleChoiceAnwserScore(name, standardAnswer, score) {
+  Question.call(this, name, standardAnswer, score);
 }
 
-MultipleChoice.prototype = Object.create(Question.prototype);
-MultipleChoice.prototype.constructor = MultipleChoice;
+MultipleChoiceAnwserScore.prototype = Object.create(Question.prototype);
+MultipleChoiceAnwserScore.prototype.constructor = MultipleChoiceAnwserScore;
 
-MultipleChoice.prototype.calculate = function (inputAnwser) {
+MultipleChoiceAnwserScore.prototype.calculate = function (inputAnwser) {
 
   var value = [];
 
@@ -15,5 +15,5 @@ MultipleChoice.prototype.calculate = function (inputAnwser) {
     }
   });
 
-  return this.standardAnswer === value.toString() ? this.scorce : 0;
+  return this.standardAnswer === value.toString() ? this.score : 0;
 };

@@ -1,7 +1,7 @@
-function Question(name, standardAnswer, scorce){
+function Question(name, standardAnswer, score){
   this.name = name;
   this.standardAnswer = standardAnswer;
-  this.scorce = scorce;
+  this.score = score;
 }
 
 Question.all = function() {
