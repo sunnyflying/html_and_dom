@@ -3,195 +3,226 @@
 <head>
   <title>yangmingkun</title>
   <meta charset="UTF-8">
-  <script type="text/javascript" src="lib/jQuery/jquery-2.1.3.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script type="text/javascript" src="lib/lodash-2.4.1/lodash.compat.js"></script>
-  <script type="text/javascript" src="model/standard_anwser.js"></script>
-  <script type="text/javascript" src="model/questions.js"></script>
-  <script type="text/javascript" src="model/choice_anwser_score.js"></script>
-  <script type="text/javascript" src="model/judge_anwser_score.js"></script>
-  <script type="text/javascript" src="model/multiple_choice_anwser_score.js"></script>
-  <script type="text/javascript" src="model/fill_anwser_score.js"></script>
-  <script type="text/javascript" src="model/short_anwser_score.js"></script>
-  <script type="text/javascript" src="main.js"></script>
+  <!-- add javascript divbs at here -->
+  <script type="text/javascript" src="divb/jQuery/jquery-2.1.3.js"></script>
+  <script type="text/javascript" src="divb/lodash-2.4.1/lodash.compat.js"></script>
+  <script type="text/javascript" src="divb/bootsdivap/js/bootsdivap.js"></script>
+
+  <!-- add css divbs at here -->
+  <divnk rel="stylesheet" href="divb/bootsdivap/css/bootsdivap.css">
+
+  <!-- add javascript sources at here -->
+  <script type="text/javascript" src="js/model/standard_anwser.js"></script>
+  <script type="text/javascript" src="js/model/questions.js"></script>
+  <script type="text/javascript" src="js/model/choice_anwser_score.js"></script>
+  <script type="text/javascript" src="js/model/judge_anwser_score.js"></script>
+  <script type="text/javascript" src="js/model/multiple_choice_anwser_score.js"></script>
+  <script type="text/javascript" src="js/model/fill_anwser_score.js"></script>
+  <script type="text/javascript" src="js/model/short_anwser_score.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
 
 </head>
 
 <body>
-  <form action="#" method="post" autocomplete="off">
-    <header>
-      <h1>统一建模语言理论测试</h1>
-      <table>
-        <tr>
-          <td>考试科目：</td>
-          <td>统一建模语言</td>
-          <td>时间：</td>
-          <td>100分钟</td>
-          <td>得分：<span id="score"> </span></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><label for="className">班级：</label></td>
-          <td><input type="text" id="className" name="className"></td>
-          <td><label for="studentNumber">学号：</label></td>
-          <td><input type="text" id="studentNumber" name="studentNumber"></td>
-          <td><label for="studentName">姓名：</label></td>
-          <td><input type="text" id="studentName" name="studentName"></td>
-        </tr>
-      </table>
-    </header>
+  <form action="#" method="post"  role="form" autocomplete="off">
+    <div class="container-fluid">
 
-    <section>
-      <header>
-        <h1>一、填空题（每空5分，共20分）</h1>
-      </header>
-      <ol>
-        <li>
-          <label>
-            UML的中文全称是：
-            <input type="text" id="fill_in_1_0" name="fill_in_1">
-          </label>
-        </li>
-        <li>
-          <label for="fill_in_2_0">对象最突出的特征是：</label>
-          <input type="text" id="fill_in_2_0" name="fill_in_2">
-          <input type="text" id="fill_in_2_1" name="fill_in_2">
-          <input type="text" id="fill_in_2_2" name="fill_in_2">
-        </li>
-      </ol>
-    </section>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <h1>统一建模语言理论测试</h1>
+        </div>
+      </div>
 
-    <section>
-      <header>
-        <h1>二、选择题（每题10分，共20分）</h1>
-      </header>
-      <ol>
-        <li>
-          <p>UML与软件工程的关系是：</p>
-          <label>
-            <input type="radio" id="choice_1_0" name="choice_1" value="A">
-            (A)&nbsp;UML就是软件工程
-          </label><br>
-          <label>
-          <input type="radio" id="choice_1_1" name="choice_1" value="B">
-            (B)&nbsp;UML参与到软件工程中软件开发过程的几个阶段
-          </label><br>
-          <label>
-            <input type="radio" id="choice_1_2" name="choice_1" value="C">
-              (C)&nbsp;UML与软件工程无关
-          </label><br>
-          <label>
-            <input type="radio" id="choice_1_3" name="choice_1" value="D">
-              (D)&nbsp;UML是软件工程的一部分
-          </label>
-        </li>
-        <li>
-            <p>Java语言支持：</p>
-          <label>
-            <input type="radio" id="choice_2_0" name="choice_2" value="A">
-              (A)&nbsp;单继承
-          </label><br>
-          <label>
-            <input type="radio" id="choice_2_1" name="choice_2" value="B">
-              (B)&nbsp;多继承
-          </label><br>
-          <label>
-            <input type="radio" id="choice_2_2" name="choice_2" value="C">
-              (C)&nbsp;单继承和多继承都支持
-          </label><br>
-          <label>
-              <input type="radio" id="choice_2_3" name="choice_2" value="D">
-              (D)&nbsp;单继承和多继承都不支持
-          </label>
-        </li>
-      </ol>
-    </section>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="control-label">
+                考试科目：
+              </label>
+                统一建模语言
+            </div>
+            <div class="col-md-4">
+              <label class="control-label">
+                时间：
+              </label>
+              100分钟
+            </div>
+            <div id="totalScore_formGroup" class="col-md-4">
+              <label class="control-label">
+                得分：
+              </label>
+              <span id="score" class="text-danger"></span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <section>
-        <header>
-          <h1>三、多项选择题（每题10分，共20分）</h1>
-        </header>
-        <ol>
-          <li>
-            <p>用例的粒度分为以下哪三种：</p>
-            <label>
-              <input type="checkbox" id="multiple_choice_1_0" name="multiple_choice_1" value="A">
-              (A)&nbsp;概述级
-            </label><br>
-            <label>
-              <input type="checkbox" id="multiple_choice_1_1" name="multiple_choice_1" value="B">
-              (B)&nbsp;需求级
-            </label><br>
-            <label>
-              <input type="checkbox" id="multiple_choice_1_2" name="multiple_choice_1" value="C">
-              (C)&nbsp;用户目标级
-            </label><br>
-            <label>
-              <input type="checkbox" id="multiple_choice_1_3" name="multiple_choice_1" value="D">
-              (D)&nbsp;子功能级
-            </label>
-          </li>
-          <li>
-            <p>类图由以下哪三部分组成：</p>
-            <label>
-              <input type="checkbox" id="multiple_choice_2_0" name="multiple_choice_2" value="A">
-              (A)&nbsp;名称(Name)
-            </label><br>
-            <label>
-              <input type="checkbox" id="multiple_choice_2_1" name="multiple_choice_2" value="B">
-              (B)&nbsp;属性(Attribute)
-            </label><br>
-            <label>
-              <input type="checkbox" id="multiple_choice_2_2" name="multiple_choice_2" value="C">
-              (C)&nbsp;操作(Operation)
-            </label><br>
-            <label>
-              <input type="checkbox" id="multiple_choice_2_3" name="multiple_choice_2" value="D">
-              (D)&nbsp;方法(Function)
-            </label>
-          </li>
-        </ol>
-      </section>
+      <div>
+        <div><label for="className">班级：</label></div>
+        <div><input type="text" id="className" name="className"></div>
+        <div><label for="studentNumber">学号：</label></div>
+        <div><input type="text" id="studentNumber" name="studentNumber"></div>
+        <div><label for="studentName">姓名：</label></div>
+        <div><input type="text" id="studentName" name="studentName"></div>
+      </div>
 
-      <section>
-        <header>
-          <h1>四、判断题（每题10分，共20分）</h1>
-        </header>
-        <ol>
-          <li>
-            <label>
-              用例图只是用于和客户交流和沟通的,用于确定需求。
-            </label>
-            <input type="radio" id="true_false_1_0" name="true_false_1" value="V">√
-            <input type="radio" id="true_false_1_1" name="true_false_1" value="X">×
-          </li>
-          <li>
-            <label>
-              在状态图中,终止状态在一个状态图中允许有任意多个。
-            </label>
-            <input type="radio" id="true_false_2_0" name="true_false_2" value="V">√
-            <input type="radio" id="true_false_2_1" name="true_false_2" value="X">×
-          </li>
-        </ol>
-      </section>
 
-      <section>
-        <header>
-          <h1>五、简答题（每题20分，共20分）</h1>
-        </header>
-        <ol>
-          <li>
-            <label>
-              简述什么是模型以及模型的表现形式？<br>
-              <textarea id="short_answer_1" name="short_answer_1" rows="10" cols="100"></textarea>
-            </label>
-          </li>
-        </ol>
-      </section>
+        <div>
+          <header>
+            <h3>一、填空题（每空5分，共20分）</h3>
+          </header>
+          <div>
+            <div>
+              <label>
+                UML的中文全称是：
+                <u><input type="text" id="fill_in_1_0" name="fill_in_1"></u>
+              </label>
+            </div>
+            <div>
+              <label for="fill_in_2_0">对象最突出的特征是：</label>
+              <input type="text" id="fill_in_2_0" name="fill_in_2">
+              <input type="text" id="fill_in_2_1" name="fill_in_2">
+              <input type="text" id="fill_in_2_2" name="fill_in_2">
+            </div>
+          </div>
+        </div>
 
-      <footer>
-        <input type="button" value="计算分数" onclick="getAcount()">
-      </footer>
-  </form>
+        <div>
+          <header>
+            <h3>二、选择题（每题10分，共20分）</h3>
+          </header>
+          <div>
+            <div>
+              <p>UML与软件工程的关系是：</p>
+              <label>
+                <input type="radio" id="choice_1_0" name="choice_1" value="A">
+                (A)&nbsp;UML就是软件工程
+              </label><br>
+              <label>
+              <input type="radio" id="choice_1_1" name="choice_1" value="B">
+                (B)&nbsp;UML参与到软件工程中软件开发过程的几个阶段
+              </label><br>
+              <label>
+                <input type="radio" id="choice_1_2" name="choice_1" value="C">
+                  (C)&nbsp;UML与软件工程无关
+              </label><br>
+              <label>
+                <input type="radio" id="choice_1_3" name="choice_1" value="D">
+                  (D)&nbsp;UML是软件工程的一部分
+              </label>
+            </div>
+            <div>
+                <p>Java语言支持：</p>
+              <label>
+                <input type="radio" id="choice_2_0" name="choice_2" value="A">
+                  (A)&nbsp;单继承
+              </label><br>
+              <label>
+                <input type="radio" id="choice_2_1" name="choice_2" value="B">
+                  (B)&nbsp;多继承
+              </label><br>
+              <label>
+                <input type="radio" id="choice_2_2" name="choice_2" value="C">
+                  (C)&nbsp;单继承和多继承都支持
+              </label><br>
+              <label>
+                  <input type="radio" id="choice_2_3" name="choice_2" value="D">
+                  (D)&nbsp;单继承和多继承都不支持
+              </label>
+            </div>
+          </div>
+        </div>
+
+          <div>
+            <header>
+              <h3>三、多项选择题（每题10分，共20分）</h3>
+            </header>
+            <div>
+              <div>
+                <p>用例的粒度分为以下哪三种：</p>
+                <label>
+                  <input type="checkbox" id="multiple_choice_1_0" name="multiple_choice_1" value="A">
+                  (A)&nbsp;概述级
+                </label><br>
+                <label>
+                  <input type="checkbox" id="multiple_choice_1_1" name="multiple_choice_1" value="B">
+                  (B)&nbsp;需求级
+                </label><br>
+                <label>
+                  <input type="checkbox" id="multiple_choice_1_2" name="multiple_choice_1" value="C">
+                  (C)&nbsp;用户目标级
+                </label><br>
+                <label>
+                  <input type="checkbox" id="multiple_choice_1_3" name="multiple_choice_1" value="D">
+                  (D)&nbsp;子功能级
+                </label>
+              </div>
+              <div>
+                <p>类图由以下哪三部分组成：</p>
+                <label>
+                  <input type="checkbox" id="multiple_choice_2_0" name="multiple_choice_2" value="A">
+                  (A)&nbsp;名称(Name)
+                </label><br>
+                <label>
+                  <input type="checkbox" id="multiple_choice_2_1" name="multiple_choice_2" value="B">
+                  (B)&nbsp;属性(Adivivibute)
+                </label><br>
+                <label>
+                  <input type="checkbox" id="multiple_choice_2_2" name="multiple_choice_2" value="C">
+                  (C)&nbsp;操作(Operation)
+                </label><br>
+                <label>
+                  <input type="checkbox" id="multiple_choice_2_3" name="multiple_choice_2" value="D">
+                  (D)&nbsp;方法(Function)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <header>
+              <h3>四、判断题（每题10分，共20分）</h3>
+            </header>
+            <div>
+              <div>
+                <label>
+                  用例图只是用于和客户交流和沟通的,用于确定需求。
+                </label>
+                <input type="radio" id="divue_false_1_0" name="divue_false_1" value="V">√
+                <input type="radio" id="divue_false_1_1" name="divue_false_1" value="X">×
+              </div>
+              <div>
+                <label>
+                  在状态图中,终止状态在一个状态图中允许有任意多个。
+                </label>
+                <input type="radio" id="divue_false_2_0" name="divue_false_2" value="V">√
+                <input type="radio" id="divue_false_2_1" name="divue_false_2" value="X">×
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <header>
+              <h3>五、简答题（每题20分，共20分）</h3>
+            </header>
+            <div>
+              <div>
+                <label>
+                  简述什么是模型以及模型的表现形式？<br>
+                  <textarea id="short_answer_1" name="short_answer_1" rows="10" cdivs="100"></textarea>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <footer>
+            <input type="button" value="计算分数" oncdivck="getAcount()">
+          </footer>
+        </div>
+      </form>
 </body>
 </html>
