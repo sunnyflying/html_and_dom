@@ -6,7 +6,7 @@ function getAcount() {
     return false;
   }
 
-  _.forEach(questions, function(question){
+  _.forEach(questions, function(question) {
     var inputAnwser = document.getElementsByName(question.name);
     score += question.calculate(inputAnwser);
   });
