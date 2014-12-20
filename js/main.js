@@ -13,7 +13,7 @@ function getAcount() {
 
   document.getElementById("score").innerText = score;
 
-  // return false;
+  return false;
 }
 
 function hasEmptyRequiredInput() {
