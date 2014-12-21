@@ -11,7 +11,7 @@ function getAcount() {
     score += question.calculate(inputAnwser);
   });
 
-  document.getElementById("score").innerText = score;
+  document.getElementById("score").innerHTML = score;
 
   return false;
 }
